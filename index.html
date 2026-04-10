@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mau Menemani?</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        :root {
+            --pink: #ffafbd;
+            --deep-pink: #ff8e91;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--pink), #ffc3a0);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 20px; }
+
+        .btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #btnYa { background-color: #ff4d6d; color: white; }
+        #btnGa { background-color: #eee; color: #333; position: relative; }
+        
+        button:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.tenor.com/7S-H6vS66ZgAAAAj/mochi-mochi-peach-cat-cute-cat.gif" alt="Cute Cat">
+        <h1 id="pertanyaan">Kamu mau kan nemenin aku selamanya? ❤️</h1>
+        
+        <div class="btns">
+            <button id="btnYa" onclick="terima()">Mau!</button>
+            <button id="btnGa" onmouseover="pindah()" onclick="pindah()">Enggak</button>
+        </div>
+    </div>
+
+    <script>
+        function terima() {
+            Swal.fire({
+                title: 'Yeayyy! 🥰',
+                text: 'Makasih ya udah mau nemenin aku. I Love You!',
+                imageUrl: 'https://media.tenor.com/ic_8XvN_Yv0AAAAj/peach-goma.gif',
+                imageWidth: 200,
+                confirmButtonText: 'Kirim Pesan ke WhatsApp',
+                confirmButtonColor: '#ff4d6d'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Ganti nomor WA di bawah ini
+                    window.location.href = "https://api.whatsapp.com/send?phone=085166617687&text=Aku%20mau%20kok%20nemenin%20kamu%20selamanya!%20❤️";
+                }
+            });
+        }
+
+        function pindah() {
+            const btn = document.getElementById('btnGa');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.position = "fixed";
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
