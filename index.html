@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mau Menemani?</title>
+    <title>Sayang gk sama icad?</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         :root {
@@ -68,7 +68,7 @@
 
     <div class="container">
         <img src="https://media.tenor.com/7S-H6vS66ZgAAAAj/mochi-mochi-peach-cat-cute-cat.gif" alt="Cute Cat">
-        <h1 id="pertanyaan">Kamu mau kan nemenin aku selamanya? ❤️</h1>
+        <h1 id="pertanyaan">Ehh Merfi lu mau gk menyayangi icad selamanya? ❤️</h1>
         
         <div class="btns">
             <button id="btnYa" onclick="terima()">Mau!</button>
@@ -80,7 +80,7 @@
         function terima() {
             Swal.fire({
                 title: 'Yeayyy! 🥰',
-                text: 'Makasih ya udah mau nemenin aku. I Love You!',
+                text: 'Makasih ya Merfie udah mau menyayangi icad. I Love You!',
                 imageUrl: 'https://media.tenor.com/ic_8XvN_Yv0AAAAj/peach-goma.gif',
                 imageWidth: 200,
                 confirmButtonText: 'Kirim Pesan ke WhatsApp',
@@ -88,7 +88,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Ganti nomor WA di bawah ini
-                    window.location.href = "https://api.whatsapp.com/send?phone=085166617687&text=Aku%20mau%20kok%20nemenin%20kamu%20selamanya!%20❤️";
+                    window.location.href = "https://api.whatsapp.com/send?phone=085166617687&text=Aku%20mau%20kok%20menyayangi%20icad%20selamanya!%20❤️";
                 }
             });
         }
